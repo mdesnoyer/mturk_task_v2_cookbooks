@@ -1,0 +1,20 @@
+DEPENDENCIES
+  webserver
+    path: .
+    metadata: true
+
+GRAPH
+  apt (2.9.2)
+  aws (2.9.2)
+    ohai (>= 2.1.0)
+  ohai (2.1.0)
+  poise (2.6.0)
+  poise-languages (1.3.2)
+    poise (~> 2.5)
+  poise-python (1.2.1)
+    poise (~> 2.0)
+    poise-languages (~> 1.2)
+  webserver (0.1.0)
+    apt (>= 0.0.0)
+    aws (>= 0.0.0)
+    poise-python (>= 0.0.0)
