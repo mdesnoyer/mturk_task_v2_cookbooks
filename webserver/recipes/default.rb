@@ -3,13 +3,15 @@
 include_recipe 'apt'
 
 # add the deadsnakes ppa
-apt_repository "deadsnakes" do
-  uri "http://ppa.launchpad.net/fkrull/deadsnakes-python2.7/ubuntu"
-  distribution 'trusty'
-  components ["main"]
-  keyserver "keyserver.ubuntu.com"
-  key "FF3997E83CD969B409FB24BC5BB92C09DB82666C"
-end
+# note: this is no longer necessary, since we're no longer using HTTPS
+# requests in Flask, since it's behind an ELB anyway.
+# apt_repository "deadsnakes" do
+#   uri "http://ppa.launchpad.net/fkrull/deadsnakes-python2.7/ubuntu"
+#   distribution 'trusty'
+#   components ["main"]
+#   keyserver "keyserver.ubuntu.com"
+#   key "FF3997E83CD969B409FB24BC5BB92C09DB82666C"
+# end
 
 include_recipe "aws"
 # # install all the required system packages
@@ -106,5 +108,7 @@ end
 # install the pip requirements
 pip_requirements "#{node[:mturk_repo]}/requirements.txt"
 
-ENV['MTURK_ACCESS_ID'] = node[:mturk][:mturk_access_key_id]
-ENV['MTURK_SECRET_KEY'] = node[:mturk][:mturk_access_key]
+# create a LOG directory
+directory "#{node[:home]}/mturk_logs" do
+  action :create
+end
