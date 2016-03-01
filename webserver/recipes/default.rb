@@ -111,4 +111,6 @@ pip_requirements "#{node[:mturk_repo]}/requirements.txt"
 # create a LOG directory
 directory "#{node[:home]}/mturk_logs" do
   action :create
+  owner 'ubuntu'
+  mode '0775'
 end
