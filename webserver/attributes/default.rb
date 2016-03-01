@@ -1,8 +1,8 @@
 default[:user] = 'vagrant'
-default[:home] = "/home/#{default[:user]}"
+default[:home] = "/home/vagrant"
 default[:code] = default[:home]
-default[:mturk_repo] = "#{default[:code]}/mturk_task_v2"
-default[:boto_repo] = "#{default[:code]}/boto"
+default[:mturk_repo] = "/home/vagrant/mturk_task_v2"
+default[:boto_repo] = "/home/vagrant/boto"
 
 # Aws access keys
 default[:aws][:access_key_id] = 'AKIAIS3LLKRK7HDX4XYA'

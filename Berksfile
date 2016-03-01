@@ -1,3 +1,3 @@
 source 'https://supermarket.chef.io'
-
-metadata
+cookbook "webserver", path: "./webserver"
+cookbook "database", path: "./database"

@@ -6,8 +6,6 @@ description 'Installs/Configures database'
 long_description 'Installs/Configures database'
 version '0.1.0'
 
-depends 'apt'
-depends 'hadoop', '= 2.2.0'
-depends 'java'
+depends 'aws'
 
 supports 'ubuntu'

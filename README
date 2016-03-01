@@ -1,0 +1,9 @@
+Cookbooks to set up the database & webserver layers for the MTurk Task
+Opsworks Stack.
+
+To package this cookbook, run
+
+    berks package mturk_cookbook_package.tar.gz
+
+Then upload it to the S3 bucket mturk-packaged-cookbooks.
+

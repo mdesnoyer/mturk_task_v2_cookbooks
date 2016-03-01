@@ -105,3 +105,6 @@ end
 
 # install the pip requirements
 pip_requirements "#{node[:mturk_repo]}/requirements.txt"
+
+ENV['MTURK_ACCESS_ID'] = node[:mturk][:mturk_access_key_id]
+ENV['MTURK_SECRET_KEY'] = node[:mturk][:mturk_access_key]
