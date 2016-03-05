@@ -108,6 +108,13 @@ end
 # install the pip requirements
 pip_requirements "#{node[:mturk_repo]}/requirements.txt"
 
+# download the GeoIP2 Lite repository
+aws_s3_file "#{node[:mturk_repo]}/#{node[:geoip_file]}" do
+  bucket node[:webserver_assets_bucket]
+  remote_path node[:geoip_file]
+  # i don't think we still need to use the aws_access_keys and stuff, since the machine itself has permissions. we'll have to find out.
+end
+
 # create a LOG directory
 directory "#{node[:home]}/mturk_logs" do
   action :create
